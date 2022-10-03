@@ -4,3 +4,10 @@
     overflow: auto;
     background: mediumaquamarine;
 }
+.centrado {
+    text-align: center;
+    vertical-align: middle;
+}
+.title-description{
+    color: aqua;
+}

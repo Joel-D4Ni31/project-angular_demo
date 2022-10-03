@@ -1,9 +1,113 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pricing</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-2 bg-black">
+            
+            <form>
+                <h3 class="title-description">Detalles datos producción</h3>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Lenguaje</label>
+                    <input type="text"  class="form-control" id="nombre" placeholder="Lenguaje" autofocus />
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion" placeholder="Descripción del lenguaje" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="programadores" class="form-label">Número de Programadores</label>
+                    <input type="number" class="form-control" id="programadores" />
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-2 bg-black">
+            <form>
+                <h3 class="title-description">Actualizar datos producción</h3>
+                <div class="mb-3">
+                    <label for="detalle" class="form-label title-description">Detalles de pedido</label>
+                    <input type="text" required [(ngModel)]="d_descripcion" class="form-control" id="detalle" placeholder="Detalle"  rows="3"/>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="ruta" class="form-label title-description">Imagen</label>
+                    <input type="text" required [(ngModel)]="d_ruta" class="form-control" id="ruta" placeholder="Ruta de la Imagen" autofocus />
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label title-description">Nombre de producto</label>
+                    <input type="text" required [(ngModel)]="d_nombre" class="form-control" id="nombre" placeholder="Nombre"  rows="3"/>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="porcentaje" class="form-label title-description">Porcentaje de proceso</label>
+                    <input type="text" required [(ngModel)]="d_porcentaje" class="form-control" id="porcentaje" placeholder="Porcentaje"  />
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label title-description">Estado</label>
+                    <input type="text" required [(ngModel)]="d_estado" class="form-control" id="estado" placeholder="Porcentaje"  />
+                </div>
+            </form>
+        </div>
+    </div>
+    <p>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 py-2 bg-black">
+            <h4 class="bg-white">Multiservicios Michel</h4>
+            <div class="d-grid gap-2 py-2">
+                <button class="btn btn-secondary">Administración</button>
+                <button class="btn btn-success">Productos</button>
+                <button class="btn btn-secondary">Ventas</button>
+                <button class="btn btn-success">Producción</button>
+                <button class="btn btn-secondary">Distribución</button>
+                <button class="btn btn-success">Sugerencias</button>                
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-10 col-xl-10 py-4 bg-white">
+            <h2>PRODUCCIÓN</h2>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th class="centrado">Id</th>
+                        <th class="centrado">Detalles</th>
+                        <th class="centrado">Productos</th>
+                        <th class="centrado">Proceso</th>
+                        <th class="centrado">Estado</th>
+                        <th class="centrado">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pro of products; index as i">
+                        <td class="centrado">{{ i }}</td>
+                        <td class="centrado">{{ pro.description }}</td>
+                        <td class="centrado">
+                            <img [src]="pro.image" height="50px" alt="image">
+                            {{ pro.name }}
+                        </td>
+                        <td class="centrado">{{pro.porcentaje}}</td>
+                        <td class="centrado">{{pro.estado}}</td>
+                        <td class="centrado ">
+                            <button  (click)="verComprobante()" class="btn btn-primary">Ver comprobante</button>
+                            <button (click)="actComprobante(i)" class="btn btn-success">Actualizar</button>    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 <h1>*ngFor</h1>
-<!-- <input type="text" required [(ngModel)]="p_name">
-<input type="text" required [(ngModel)]="p_image">
-<input type="number" required [(ngModel)]="p_price">
-<button (click)="addProduct()" class="btn btn-primary">Agregar</button> -->
-
 <table>
     <thead>
          <tr>
@@ -25,7 +129,7 @@
  </table>
 
 
-
+ 
 <h2>PRODUCTS</h2>
 <div *ngFor="let product of products">
     <img [src]="product.image" height="200px" alt="image">
@@ -102,4 +206,4 @@
 </div>
 <h1>hey que tal?</h1>
 <h2>{{ titulo }}</h2>
-<button class="btn btn-primary">Hey</button>
+<button class="btn btn-primary">Hey</button> 
