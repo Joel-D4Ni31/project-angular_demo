@@ -1,6 +1,6 @@
 # AngularDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Este proyecto es generado por [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server
 
